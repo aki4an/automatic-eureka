@@ -100,9 +100,8 @@ public class Main {
         while (!userInput.equals("Exit")) {
             System.out.print("Please enter something: ");
             userInput = scanner.nextLine();
+            System.out.println("You've entered: " + userInput);
         }
-
-        System.out.println("You've entered: " + userInput);
     }
 
     private static void loopsThree() {
@@ -126,15 +125,11 @@ public class Main {
             System.out.print("Введите номер канала (0 - Выход): ");
             channel = scanner.nextInt();
 
-            switch (channel) {
-                case 0 -> System.out.println("Выход...");
-                case 1 -> System.out.println(array[0]);
-                case 2 -> System.out.println(array[1]);
-                case 3 -> System.out.println(array[2]);
-                case 4 -> System.out.println(array[3]);
-                case 5 -> System.out.println(array[4]);
-                default -> System.out.println("Такого канала не существует!");
-            }
+            if (channel > 0 && channel <= 5) {
+                System.out.println(array[channel - 1]);
+            } else if (channel == 0) {
+                System.out.println("Выход...");
+            } else System.out.println("Такого канала не существует!");
         } while (channel != 0);
     }
 }
