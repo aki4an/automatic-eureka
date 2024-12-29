@@ -119,14 +119,14 @@ public class Main {
 
     private static void loopsFour() {
         int channel;
-        String[] array = new String[]{"1 - Беларусь 1", "2 - Беларусь 2", "3 - Беларусь 3", "4 - Беларусь 4", "5 - Беларусь 5"};
+        String[] tvChannels = new String[]{"1 - Беларусь 1", "2 - Беларусь 2", "3 - Беларусь 3", "4 - Беларусь 4", "5 - Беларусь 5"};
 
         do {
             System.out.print("Введите номер канала (0 - Выход): ");
             channel = scanner.nextInt();
 
-            if (channel > 0 && channel <= 5) {
-                System.out.println(array[channel - 1]);
+            if (channel > 0 && channel <= tvChannels.length) {
+                System.out.println(tvChannels[channel - 1]);
             } else if (channel == 0) {
                 System.out.println("Выход...");
             } else System.out.println("Такого канала не существует!");
